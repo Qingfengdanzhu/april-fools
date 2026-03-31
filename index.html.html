@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>请立即查看</title>
+  <style>
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:linear-gradient(135deg,#fff6fb,#f4f8ff);
+      color:#222;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+    .card{
+      width:min(92vw,420px);
+      background:#fff;
+      border-radius:24px;
+      box-shadow:0 16px 50px rgba(0,0,0,.12);
+      padding:28px 24px 24px;
+      text-align:center;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      background:#111;
+      color:#fff;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:24px;
+      margin:8px 0 10px;
+    }
+    p{
+      color:#555;
+      line-height:1.7;
+      font-size:15px;
+      margin:10px 0;
+    }
+    button{
+      margin-top:18px;
+      width:100%;
+      padding:14px 18px;
+      border:none;
+      border-radius:14px;
+      background:#111;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+    }
+    .hidden{display:none;}
+    .big{
+      font-size:34px;
+      margin:10px 0;
+    }
+    .sub{
+      font-size:18px;
+      color:#333;
+      font-weight:600;
+    }
+    .tip{
+      margin-top:14px;
+      font-size:13px;
+      color:#888;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="step1">
+    <div class="badge">特别提醒</div>
+    <h1>你有一条专属消息待确认</h1>
+    <p>系统检测到你今天的可爱指数已严重超标。</p>
+    <p>请点击下方按钮查看详细结果。</p>
+    <button onclick="showPrank()">立即查看</button>
+    <div class="tip">仅限本人查看</div>
+  </div>
+
+  <div class="card hidden" id="step2">
+    <div class="big">😆</div>
+    <h1>恭喜你被整蛊成功</h1>
+    <p class="sub">今日份限定受害者：就是你</p>
+    <p>不过系统复核后发现——你不是违规，是太可爱了。</p>
+    <p><strong>愚人节快乐！</strong></p>
+    <div class="tip">发送人：那个偷偷想逗你开心的人</div>
+  </div>
+
+  <script>
+    function showPrank(){
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
